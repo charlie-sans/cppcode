@@ -6,7 +6,7 @@
 all: main
 
 main: main.cpp
-	clang++ main.cpp -o main -lstdc++ `pkg-config gtkmm-4.0 --cflags --libs`
+	clang++ main.cpp -o main -lstdc++ `pkg-config qtbase5-dev --cflags --libs`
 
 	./main
 clean:

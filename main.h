@@ -31,5 +31,21 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <fcntl.h>
+#include <unistd.h>
+#include <QApplication>
+#include <QLabel>
+#include <QLineEdit>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QGridLayout>
+#include <QTextEdit>
+#include <QTextStream>
+#include <QFile>
+#include <QTextStream>  
+#include <QUrl>
+#include <QPushButton>
+#include <QCoreApplication>
+#include <QFileDialog>
+#include <QMessageBox>
 
-#include <gtkmm.h>
+#include <QWebEngineView>

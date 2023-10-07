@@ -1,4 +1,3 @@
-
 #include <string>
 #include <stdlib.h>
 #include <stdio.h>
@@ -8,8 +7,33 @@
 #include "console.cpp"
 
 using namespace std;
-int main() {
-    string command;
+
+
+int world(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+
+    // Create a web engine view widget
+    QWebEngineView *webView = new QWebEngineView;
+
+    // Load a local HTML file
+    webView->setUrl(QUrl::fromLocalFile("file.html"));
+
+    // Check if the web engine view widget was properly initialized
+    if (webView->page() == nullptr) {
+        qCritical() << "Failed to initialize QWebEngineView";
+        return 1;
+    }
+
+    // Show the web engine view widget
+    webView->show();
+
+    // Run the event loop
+    return app.exec();
+}
+int command()
+{
+        string command;
 
     while (true) {
         cout << "> ";
@@ -61,7 +85,7 @@ int main() {
 else if (command == "gtk")
 {
     // show the GTK window from console.cpp
-    HelloWorld(); 
+    world(0, NULL);
 }
         else if (command == "cd")
         {
@@ -170,7 +194,10 @@ else if (command == "gtk")
 
         // Add your own commands here
     }
-
-    return 0;
 }
 
+int main() {
+
+    world(0, NULL);
+    return 0;
+}
